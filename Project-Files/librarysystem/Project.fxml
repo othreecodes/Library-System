@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#start" onMouseEntered="#start" onMouseMoved="#start" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarysystem.MainController">
+   <children>
+      <TabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab closable="false" text="Library Projects">
+               <content>
+                  <SplitPane dividerPositions="0.31875" prefHeight="763.0" prefWidth="1276.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TitledPane alignment="CENTER" collapsible="false" contentDisplay="CENTER" prefHeight="716.0" prefWidth="413.0" text="ADD PROJECTS" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox layoutX="7.0" layoutY="6.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <TextField fx:id="isbnTextField" promptText="MATRIC">
+                                                   <tooltip>
+                                                      <Tooltip text="ISBN" />
+                                                   </tooltip></TextField>
+                                                <TextField fx:id="titleTextField" promptText="TITLE">
+                                                   <tooltip>
+                                                      <Tooltip text="TITLE" />
+                                                   </tooltip></TextField>
+                                                <TextField fx:id="authorTextField" promptText="OWNER">
+                                                   <tooltip>
+                                                      <Tooltip text="AUTHOR" />
+                                                   </tooltip></TextField>
+                                                <TextField fx:id="publisherTextField" promptText="SUPERVISOR">
+                                                   <tooltip>
+                                                      <Tooltip text="PUBLISHER" />
+                                                   </tooltip></TextField>
+                                                <TextField fx:id="quantityTextField" promptText="YEAR">
+                                                   <tooltip>
+                                                      <Tooltip text="QUANTITY" />
+                                                   </tooltip></TextField>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addProject" text="ADD">
+                                                   
+                                                </Button>
+                                                <TitledPane animated="false" collapsible="false" text="SEARCH">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="209.0">
+                                                         <children>
+                                                            <TextField fx:id="searchTextField" layoutX="24.0" layoutY="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                   <VBox.margin>
+                                                      <Insets top="50.0" />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </TitledPane>
+                                                <TitledPane animated="false" collapsible="false" prefHeight="116.0" prefWidth="259.0" text="IMPORT">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextField layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                            <Button layoutX="87.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#importProject" prefHeight="30.0" prefWidth="91.0" text="IMPORT" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+                                                               <padding>
+                                                                  <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </Button>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </TitledPane>
+                                                <Button mnemonicParsing="false" onAction="#backSelect" text="Back" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="libraryTable" layoutX="1.0" onMouseClicked="#start" onMouseEntered="#start" onMouseMoved="#start" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="snColumn" prefWidth="60.0" text="S/N" />
+                                  <TableColumn fx:id="isbnColumn" prefWidth="126.0" text="MATRIC" />
+                                    <TableColumn fx:id="titleColumn" prefWidth="138.0" text="TITLE" />
+                                    <TableColumn fx:id="authorColumn" prefWidth="173.0" text="OWNER" />
+                                    <TableColumn fx:id="publisherColumn" minWidth="9.0" prefWidth="170.0" text="SUPERVISOR" />
+                                    <TableColumn fx:id="quantityColumn" prefWidth="88.0" text="YEAR" />
+                                    <TableColumn fx:id="c" prefWidth="81.0" text="CATALOUGE" visible="false" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Borrowed Projects">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="14.0" layoutY="148.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <bottom>
+                              <SplitPane dividerPositions="0.0" orientation="VERTICAL" prefHeight="242.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.26410658307210033" layoutX="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <VBox layoutX="48.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="333.0" text="BORROWER'S DETAILS" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="borrowerName" promptText="NAME">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="20.0" />
+                                                               </VBox.margin>
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <tooltip>
+                                                                  <Tooltip text="NAME" />
+                                                               </tooltip>
+                                                            </TextField>
+                                                            <TextField fx:id="borrowerHall" layoutX="10.0" layoutY="30.0" promptText="HALL">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="20.0" />
+                                                               </VBox.margin>
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <tooltip>
+                                                                  <Tooltip text="HALL" />
+                                                               </tooltip>
+                                                            </TextField>
+                                                            <TextField fx:id="borrowerNumber" layoutX="10.0" layoutY="55.0" promptText="PHONE NUMBER">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="20.0" />
+                                                               </VBox.margin>
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <tooltip>
+                                                                  <Tooltip text="PHONE NUMBER" />
+                                                               </tooltip>
+                                                            </TextField>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <VBox layoutX="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="949.0" text="PROJECT DETAILS" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="20.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <ComboBox fx:id="selectBook" prefHeight="29.0" prefWidth="950.0" promptText="SELECT PROJECT" visibleRowCount="5">
+                                                               <VBox.margin>
+                                                                  <Insets left="150.0" right="150.0" />
+                                                               </VBox.margin>
+                                                               <tooltip>
+                                                                  <Tooltip text="SELECT BOOK" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                            <DatePicker fx:id="selectDate" prefHeight="29.0" prefWidth="950.0" promptText="BORROW DATE" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="20.0" left="150.0" right="150.0" top="20.0" />
+                                                               </VBox.margin>
+                                                               <tooltip>
+                                                                  <Tooltip text="BORROW DATE" />
+                                                               </tooltip>
+                                                            </DatePicker>
+                                                            <Button mnemonicParsing="false" onAction="#addLib" text="ADD">
+                                                               <VBox.margin>
+                                                                  <Insets left="300.0" right="500.0" />
+                                                               </VBox.margin></Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </bottom>
+                           <top>
+                              <TableView fx:id="borrowerTable" onMouseClicked="#init3" onMouseEntered="#init3" onMouseMoved="#init3" prefHeight="446.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="bname" prefWidth="136.0" text="Borrower's Name" />
+                                  <TableColumn fx:id="bhall" prefWidth="126.0" text="Hall" />
+                                    <TableColumn fx:id="bnumber" prefWidth="129.0" text="Phone Number" />
+                                    <TableColumn fx:id="bbook" prefWidth="487.0" text="Project Borrowed" />
+                                    <TableColumn fx:id="bdate" prefWidth="120.0" text="Borrowed Date" />
+                                    <TableColumn fx:id="bdue" prefWidth="122.0" text="Due Date" />
+                                    <TableColumn fx:id="returned" prefWidth="129.0" />
+                                </columns>
+                              </TableView>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Due Projects" >
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" onMouseClicked="#init4" onMouseEntered="#init4" onMouseMoved="#init4">
+                     <children>
+                        <ListView fx:id="duebooksListView" layoutX="14.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#showSettings" text="Settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#showHelp" text="Help" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TabPane>
+   </children>
+   <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

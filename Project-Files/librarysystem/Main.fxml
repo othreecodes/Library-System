@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarysystem.MainController">
+   <children>
+    <AnchorPane id="anchorPane2" prefHeight="300.0" prefWidth="500.0" styleClass="top-segment" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+          <children>
+                  <Label id="login" alignment="CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="380.0" text="ADMIN-LOGIN" textAlignment="CENTER" textFill="#008287">
+                     <font>
+                        <Font name="B652-Sans-Regular" size="38.0" />
+                     </font>
+                     <effect>
+                        <Reflection bottomOpacity="0.02" fraction="0.55" />
+                     </effect>
+                  </Label>
+            <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
+              <children>
+                <TextField id="textField1" fx:id="userId" layoutY="86.0" prefHeight="35.0" prefWidth="421.0" promptText="USERNAME" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <tooltip>
+                              <Tooltip text="USERNAME" />
+                           </tooltip></TextField>
+                <PasswordField id="passwordField1" fx:id="password" layoutY="157.0" prefHeight="35.0" prefWidth="421.0" promptText="PASSWORD" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <tooltip>
+                              <Tooltip text="PASSWORD" />
+                           </tooltip></PasswordField>
+                
+              </children>
+            </AnchorPane>
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <Button id="button1" fx:id="login" defaultButton="true" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="400.0" text="LOGIN" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font name="B652-Sans-Regular" size="25.0" />
+         </font></Button>
+    <HBox id="hBox1" alignment="CENTER" prefHeight="25.0" prefWidth="418.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="41.0">
+      <children>
+        <Label id="label2" fx:id="errorMessage" />
+            
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

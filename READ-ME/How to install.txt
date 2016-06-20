@@ -1,0 +1,5 @@
+1. Make sure Mysql server is running on your system on port 3306
+2. download the exe file
+3 run the app
+4 enter 'user' as the username 
+and 'password' as the password

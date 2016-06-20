@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="403.0" prefWidth="602.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="librarysystem.MainController">
+   <children>
+      <Label layoutX="153.0" layoutY="35.0" prefHeight="97.0" prefWidth="295.0" text="WELCOME" textFill="WHITE">
+         <font>
+            <Font name="256 Bytes" size="81.0" />
+         </font>
+      </Label>
+      <Button fx:id="but" layoutX="57.0" layoutY="182.0" mnemonicParsing="false" onAction="#authenticateBook" prefHeight="97.0" prefWidth="150.0" text=" BOOKS" />
+      <Button layoutX="396.0" layoutY="182.0" mnemonicParsing="false" onAction="#authenticateProjects" prefHeight="97.0" prefWidth="150.0" text="PROJECTS" />
+   </children>
+</AnchorPane>
